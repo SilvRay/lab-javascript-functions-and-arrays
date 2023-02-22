@@ -61,7 +61,7 @@ function sum(mixedArr) {
         total += 0
       }
     } else if (typeof mixedArr[i] === 'object' || Array.isArray(mixedArr[i])) {
-      throw new Error ('Unsupported data type (object or array) in the array')
+      throw Error("Unsupported data type")
     }
   }
   return total
@@ -156,13 +156,8 @@ function doesWordExist(wordsFind, existingWord) {
   if (wordsFind.length === 0) {
     return null
   }
-  for (let i = 0; i < wordsFind.length; i++) {
-    if (existingWord === wordsFind[i]) {
-      return  true
-    } else {
-      return false
-    }
-  }
+   
+  return wordsFind.includes(existingWord)
 }
 
 
